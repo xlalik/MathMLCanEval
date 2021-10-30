@@ -66,7 +66,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>5.0.3.Final</version> <!-- 5.x nie je podporovana springom 3.x -->
+            <version>7.0.1.Final</version> <!-- 5.x nie je podporovana springom 3.x -->
         </dependency> 
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -107,7 +107,7 @@
         <dependency>
             <groupId>log4jwebtracker</groupId>
             <artifactId>log4jwebtracker</artifactId>
-            <version>1.0.1</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.tiles</groupId>
@@ -117,14 +117,21 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-core</artifactId>
-            <version>2.4.3</version>
+            <version>2.13.0</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.10.7</version>
+            <version>2.13.0</version>
         </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>log4jwebtracker-releases</id>
+            <url>https://nexus.bedatadriven.com/content/groups/public/</url>
+        </repository>
+    </repositories>
 
     <build> 
         <!-- GIT COMMIT ID PLUGIN CONFIGURATION -->
@@ -144,7 +151,7 @@
             <plugin>
                 <groupId>pl.project13.maven</groupId>
                 <artifactId>git-commit-id-plugin</artifactId>
-                <version>2.1.10</version>
+                <version>4.9.10</version>
                 <executions>
                     <execution>
                         <goals>
@@ -204,7 +211,7 @@
 
                     <!-- true by default, controls whether the plugin will fail when no .git directory is found, when set to false the plugin will just skip execution -->
                     <!-- @since 2.0.4 -->
-                    <failOnNoGitDirectory>true</failOnNoGitDirectory>
+                    <failOnNoGitDirectory>false</failOnNoGitDirectory>
 
                     <!-- @since v2.0.4 -->
                     <!--
@@ -320,7 +327,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>2.4</version>
+                <version>3.3.2</version>
                 <configuration>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
                 </configuration>
